@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# swith to submodule
+pushd "${0%/*}/../dojo-website" >/dev/null
+
+git grep -l deprecated -- "src/documentation/reference-guide/*.rst" |\
+grep -e '/\(dojo\|dojox\|dijit\|util\)/' |\
+sed "s;src/documentation/reference-guide/[^/]*/\(.*\)\.rst;\1;" | sort -u

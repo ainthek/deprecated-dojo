@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var JSONStream = require('JSONStream');
+var es = require('event-stream');
+var fs = require('fs');
+
+
+fs.createReadStream(process.argv[2])
+    .pipe(JSONStream.parse("*"))
+    .pipe(es.mapSync(function(module) {
+
+        (module.methods || [])
+        .filter(deprecated)
+            .forEach(print, module);
+
+        function deprecated(field) {
+            return field.deprecated || ~(field.summary || "").indexOf("deprecated");
+        }
+
+        function print(field) {
+            // this is module
+            console.log("%s\t%s\t%s", this.location, field.name, field.deprecated);
+        }
+    }));
