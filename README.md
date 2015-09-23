@@ -24,7 +24,7 @@ dojo/_base/lang methods
 	git submodule update
 
 	# methods deprecated in API docs (detail.json)
-	./bin/deprecated-api
+	./bin/deprecated-api dojo-website/src/documentation/api/1.10/details.json
 
 	# modules with some deprecated apis
 	./bin/deprecated-reference-guide
