@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="data:text/css,%2F%2A%20GitHub%20stylesheet%20for%20MarkdownPad%20%28http%3A%2F%2Fmarkdownpad%2Ecom%29%20%2A%2F%0A%2F%2A%20Author%3A%20Nicolas%20Hery%20%2D%20http%3A%2F%2Fnicolashery%2Ecom%20%2A%2F%0A%2F%2A%20Version%3A%2029d1c5bc36da364ad5aa86946d420b7bbc54a253%20%2A%2F%0A%2F%2A%20Source%3A%20https%3A%2F%2Fgithub%2Ecom%2Fnicolahery%2Fmarkdownpad%2Dgithub%20%2A%2F%0A%0A%2F%2A%20RESET%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ahtml%2Cbody%2Cdiv%2Cspan%2Capplet%2Cobject%2Ciframe%2Ch1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%2Cp%2Cblockquote%2Cpre%2Ca%2Cabbr%2Cacronym%2Caddress%2Cbig%2Ccite%2Ccode%2Cdel%2Cdfn%2Cem%2Cimg%2Cins%2Ckbd%2Cq%2Cs%2Csamp%2Csmall%2Cstrike%2Cstrong%2Csub%2Csup%2Ctt%2Cvar%2Cb%2Cu%2Ci%2Ccenter%2Cdl%2Cdt%2Cdd%2Col%2Cul%2Cli%2Cfieldset%2Cform%2Clabel%2Clegend%2Ctable%2Ccaption%2Ctbody%2Ctfoot%2Cthead%2Ctr%2Cth%2Ctd%2Carticle%2Caside%2Ccanvas%2Cdetails%2Cembed%2Cfigure%2Cfigcaption%2Cfooter%2Cheader%2Chgroup%2Cmenu%2Cnav%2Coutput%2Cruby%2Csection%2Csummary%2Ctime%2Cmark%2Caudio%2Cvideo%0A%09%7B%0A%09margin%3A%200%3B%0A%09padding%3A%200%3B%0A%09border%3A%200%3B%0A%7D%0A%0A%2F%2A%20BODY%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Abody%20%7B%0A%09font%2Dfamily%3A%20Helvetica%2C%20arial%2C%20freesans%2C%20clean%2C%20sans%2Dserif%3B%0A%09font%2Dsize%3A%2014px%3B%0A%09line%2Dheight%3A%201%2E6%3B%0A%09color%3A%20%23333%3B%0A%09background%2Dcolor%3A%20%23fff%3B%0A%09padding%3A%2020px%3B%0A%09max%2Dwidth%3A%20960px%3B%0A%09margin%3A%200%20auto%3B%0A%7D%0A%0Abody%3E%2A%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200%20%21important%3B%0A%7D%0A%0Abody%3E%2A%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200%20%21important%3B%0A%7D%0A%0A%2F%2A%20BLOCKS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ap%2Cblockquote%2Cul%2Col%2Cdl%2Ctable%2Cpre%20%7B%0A%09margin%3A%2015px%200%3B%0A%7D%0A%0A%2F%2A%20HEADERS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ah1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%20%7B%0A%09margin%3A%2020px%200%2010px%3B%0A%09padding%3A%200%3B%0A%09font%2Dweight%3A%20bold%3B%0A%09%2Dwebkit%2Dfont%2Dsmoothing%3A%20antialiased%3B%0A%7D%0A%0Ah1%20tt%2Ch1%20code%2Ch2%20tt%2Ch2%20code%2Ch3%20tt%2Ch3%20code%2Ch4%20tt%2Ch4%20code%2Ch5%20tt%2Ch5%20code%2Ch6%20tt%2Ch6%20code%0A%09%7B%0A%09font%2Dsize%3A%20inherit%3B%0A%7D%0A%0Ah1%20%7B%0A%09font%2Dsize%3A%2028px%3B%0A%09color%3A%20%23000%3B%0A%7D%0A%0Ah2%20%7B%0A%09font%2Dsize%3A%2024px%3B%0A%09border%2Dbottom%3A%201px%20solid%20%23ccc%3B%0A%09color%3A%20%23000%3B%0A%7D%0A%0Ah3%20%7B%0A%09font%2Dsize%3A%2018px%3B%0A%7D%0A%0Ah4%20%7B%0A%09font%2Dsize%3A%2016px%3B%0A%7D%0A%0Ah5%20%7B%0A%09font%2Dsize%3A%2014px%3B%0A%7D%0A%0Ah6%20%7B%0A%09color%3A%20%23777%3B%0A%09font%2Dsize%3A%2014px%3B%0A%7D%0A%0Abody%3Eh2%3Afirst%2Dchild%2Cbody%3Eh1%3Afirst%2Dchild%2Cbody%3Eh1%3Afirst%2Dchild%2Bh2%2Cbody%3Eh3%3Afirst%2Dchild%2Cbody%3Eh4%3Afirst%2Dchild%2Cbody%3Eh5%3Afirst%2Dchild%2Cbody%3Eh6%3Afirst%2Dchild%0A%09%7B%0A%09margin%2Dtop%3A%200%3B%0A%09padding%2Dtop%3A%200%3B%0A%7D%0A%0Aa%3Afirst%2Dchild%20h1%2Ca%3Afirst%2Dchild%20h2%2Ca%3Afirst%2Dchild%20h3%2Ca%3Afirst%2Dchild%20h4%2Ca%3Afirst%2Dchild%20h5%2Ca%3Afirst%2Dchild%20h6%0A%09%7B%0A%09margin%2Dtop%3A%200%3B%0A%09padding%2Dtop%3A%200%3B%0A%7D%0A%0Ah1%2Bp%2Ch2%2Bp%2Ch3%2Bp%2Ch4%2Bp%2Ch5%2Bp%2Ch6%2Bp%20%7B%0A%09margin%2Dtop%3A%2010px%3B%0A%7D%0A%0A%2F%2A%20LINKS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aa%20%7B%0A%09color%3A%20%234183C4%3B%0A%09text%2Ddecoration%3A%20none%3B%0A%7D%0A%0Aa%3Ahover%20%7B%0A%09text%2Ddecoration%3A%20underline%3B%0A%7D%0A%0A%2F%2A%20LISTS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aul%2Col%20%7B%0A%09padding%2Dleft%3A%2030px%3B%0A%7D%0A%0Aul%20li%3E%3Afirst%2Dchild%2Col%20li%3E%3Afirst%2Dchild%2Cul%20li%20ul%3Afirst%2Dof%2Dtype%2Col%20li%20ol%3Afirst%2Dof%2Dtype%2Cul%20li%20ol%3Afirst%2Dof%2Dtype%2Col%20li%20ul%3Afirst%2Dof%2Dtype%0A%09%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Aul%20ul%2Cul%20ol%2Col%20ol%2Col%20ul%20%7B%0A%09margin%2Dbottom%3A%200%3B%0A%7D%0A%0Adl%20%7B%0A%09padding%3A%200%3B%0A%7D%0A%0Adl%20dt%20%7B%0A%09font%2Dsize%3A%2014px%3B%0A%09font%2Dweight%3A%20bold%3B%0A%09font%2Dstyle%3A%20italic%3B%0A%09padding%3A%200%3B%0A%09margin%3A%2015px%200%205px%3B%0A%7D%0A%0Adl%20dt%3Afirst%2Dchild%20%7B%0A%09padding%3A%200%3B%0A%7D%0A%0Adl%20dt%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Adl%20dt%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0Adl%20dd%20%7B%0A%09margin%3A%200%200%2015px%3B%0A%09padding%3A%200%2015px%3B%0A%7D%0A%0Adl%20dd%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Adl%20dd%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0A%2F%2A%20CODE%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Apre%2Ccode%2Ctt%20%7B%0A%09font%2Dsize%3A%2012px%3B%0A%09font%2Dfamily%3A%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Courier%2C%20monospace%3B%0A%7D%0A%0Acode%2Ctt%20%7B%0A%09margin%3A%200%200px%3B%0A%09padding%3A%200px%200px%3B%0A%09white%2Dspace%3A%20nowrap%3B%0A%09border%3A%201px%20solid%20%23eaeaea%3B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%09border%2Dradius%3A%203px%3B%0A%7D%0A%0Apre%3Ecode%20%7B%0A%09margin%3A%200%3B%0A%09padding%3A%200%3B%0A%09white%2Dspace%3A%20pre%3B%0A%09border%3A%20none%3B%0A%09background%3A%20transparent%3B%0A%7D%0A%0Apre%20%7B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%09border%3A%201px%20solid%20%23ccc%3B%0A%09font%2Dsize%3A%2013px%3B%0A%09line%2Dheight%3A%2019px%3B%0A%09overflow%3A%20auto%3B%0A%09padding%3A%206px%2010px%3B%0A%09border%2Dradius%3A%203px%3B%0A%7D%0A%0Apre%20code%2Cpre%20tt%20%7B%0A%09background%2Dcolor%3A%20transparent%3B%0A%09border%3A%20none%3B%0A%7D%0A%0A%2F%2A%20QUOTES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ablockquote%20%7B%0A%09border%2Dleft%3A%204px%20solid%20%23DDD%3B%0A%09padding%3A%200%2015px%3B%0A%09color%3A%20%23777%3B%0A%7D%0A%0Ablockquote%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Ablockquote%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0A%2F%2A%20HORIZONTAL%20RULES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ahr%20%7B%0A%09clear%3A%20both%3B%0A%09margin%3A%2015px%200%3B%0A%09height%3A%200px%3B%0A%09overflow%3A%20hidden%3B%0A%09border%3A%20none%3B%0A%09background%3A%20transparent%3B%0A%09border%2Dbottom%3A%204px%20solid%20%23ddd%3B%0A%09padding%3A%200%3B%0A%7D%0A%0A%2F%2A%20TABLES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Atable%20th%20%7B%0A%09font%2Dweight%3A%20bold%3B%0A%7D%0A%0Atable%20th%2Ctable%20td%20%7B%0A%09border%3A%201px%20solid%20%23ccc%3B%0A%09padding%3A%206px%2013px%3B%0A%7D%0A%0Atable%20tr%20%7B%0A%09border%2Dtop%3A%201px%20solid%20%23ccc%3B%0A%09background%2Dcolor%3A%20%23fff%3B%0A%7D%0A%0Atable%20tr%3Anth%2Dchild%282n%29%20%7B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%7D%0A%0A%2F%2A%20IMAGES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aimg%20%7B%0A%09max%2Dwidth%3A%20100%25%3B%0A%7D%0A%0A%2F%2A%20CUSTOM%20by%20gti%2C%20maybe%20to%20separate%20file%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%2A%2F%0Aimg%20%7B%0A%09display%3A%20block%3B%0A%09margin%3A%2010px%3B%0A%7D%0A%0Atd%2ElineNumbers%20%7B%0A%09width%3A%205px%3B%0A%7D%0A%0Atd%2EsourceCode%20%7B%0A%09padding%2Dleft%3A%202px%3B%0A%7D" rel="stylesheet">
+</head>
+<body>
+<h1 id="modules-used-on-our-project">Modules used on our project</h1>
+<p>This is only sample showing what we are using and not.</p>
+<p>TODO: join modules with deprecated APIs</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">mid</th>
+<th style="text-align: left;">used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dojo/Deferred</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/DeferredList</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/Evented</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/NodeList</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/NodeList-data</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/NodeList-dom</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/NodeList-fx</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/NodeList-html</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/NodeList-manipulate</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/NodeList-traverse</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/Stateful</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/Color</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/Deferred</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/NodeList</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/array</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/browser</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/config</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/connect</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/declare</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/event</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/fx</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/html</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/json</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/kernel</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/lang</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/loader</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/query</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/sniff</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/unload</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/url</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_base/window</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/_base/xhr</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/_firebug/firebug</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/aspect</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/back</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/behavior</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/cache</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/cldr/monetary</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/cldr/supplemental</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/colors</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/cookie</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/currency</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/ItemFileReadStore</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/ItemFileWriteStore</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/ObjectStore</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/api/Identity</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/api/Item</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/api/Notification</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/api/Read</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/api/Request</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/api/Write</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/util/filter</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/data/util/simpleFetch</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/data/util/sorter</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/date</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/date/locale</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/date/stamp</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/debounce</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/AutoSource</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/Avatar</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/Container</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/Manager</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/Moveable</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/Mover</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/Selector</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/Source</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/Target</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/TimedMoveable</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/autoscroll</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dnd/common</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dnd/move</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dom</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dom-attr</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dom-class</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dom-construct</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dom-form</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dom-geometry</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/dom-prop</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/dom-style</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/domReady</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/errors/CancelError</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/errors/RequestError</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/errors/RequestTimeoutError</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/errors/create</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/fx</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/fx/Toggler</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/fx/easing</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/gears</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/has</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/hash</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/hccss</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/html</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/i18n</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/io-query</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/io/iframe</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/io/script</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/json</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/keys</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/loadInit</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/main</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/mouse</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/node</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/number</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/on</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/on/asyncEventListener</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/on/debounce</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/on/throttle</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/parser</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/promise/Promise</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/promise/all</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/promise/first</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/promise/instrumentation</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/promise/tracer</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/query</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/ready</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/regexp</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/request/default</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request/handlers</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/request/iframe</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request/node</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/request/notify</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request/registry</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/request/script</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request/util</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/request/watch</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/request/xhr</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/require</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/robot</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/robotx</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/router</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/router/RouterBase</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/rpc/JsonService</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/rpc/JsonpService</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/rpc/RpcService</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/selector/_loader</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/selector/acme</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/selector/lite</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/sniff</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/store/Cache</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/store/DataStore</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/store/JsonRest</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/store/Memory</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/store/Observable</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/store/api/Store</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/store/util/QueryResults</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/store/util/SimpleQueryEngine</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/string</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/text</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/throttle</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/topic</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/touch</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/uacss</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dojo/when</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dojo/window</td>
+<td style="text-align: left;">YES</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

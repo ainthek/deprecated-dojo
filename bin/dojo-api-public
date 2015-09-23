@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+var JSONStream = require('JSONStream');
+var es = require('event-stream');
+var fs = require('fs');
+
+
+fs.createReadStream(process.argv[2])
+    .pipe(JSONStream.parse("*"))
+    .pipe(es.mapSync(function(module) {
+
+        (module.methods || [])
+        .filter(notDeprecated)
+        .filter(notPrivate)
+        .filter(notInherited, module)
+        .forEach(print, module);
+
+        function notDeprecated(field) {
+            return ! (field.deprecated || ~(field.summary || "").indexOf("deprecated"));
+        }
+        function notPrivate(field){
+            return !field.private;
+        }
+        function notInherited(field){
+            return field.from===this.location;
+        }
+        
+
+        function print(field) {
+            // this is module
+            console.log("%s\t%s\t%s", this.location,this.type, field.name);
+        }
+    }));

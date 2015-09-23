@@ -1,0 +1,19 @@
+2358 type
+2358 location
+1815 methods
+1562 properties
+1536 summary
+1252 classlike
+1205 returnTypes
+1205 parameters
+ 668 superclass
+ 668 mixins
+ 652 events
+ 420 description
+ 185 examples
+  22 returnDescription
+
+
+< dojo-website/src/documentation/api/1.10/details.json jsontool | grep "^\s\s\s\s[\"]" | trim | cut -d":" -f1 | dequote | cnt
+
+  
