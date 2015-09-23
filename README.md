@@ -19,9 +19,10 @@ dojo/_base/lang methods
 	# get tools
 	npm install
 
+	# nou using submodule, gh-pages problem
 	# get/update dojo data (api and reference guide)
-	git submodule init
-	git submodule update
+	# git submodule init
+	# git submodule update
 
 	# methods deprecated in API docs (detail.json)
 	./bin/deprecated-api dojo-website/src/documentation/api/1.10/details.json
