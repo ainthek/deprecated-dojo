@@ -9,6 +9,7 @@ fs.createReadStream(process.argv[2])
     .pipe(JSONStream.parse("*"))
     .pipe(es.mapSync(function(module) {
 
+
         (module.methods || [])
         .filter(notDeprecated)
         .filter(notPrivate)
@@ -22,12 +23,31 @@ fs.createReadStream(process.argv[2])
             return !field.private;
         }
         function notInherited(field){
-            return field.from===this.location;
+            return field.from===this.location; //FIXME: see dojo functional missing functions
         }
         
 
         function print(field) {
             // this is module
-            console.log("%s\t%s\t%s", this.location,this.type, field.name);
+            console.log("%s\t%s\t%s\t%s", this.location,this.type, field.name,field.from);
         }
     }));
+
+/*
+Inherited logic based on return field.from===this.location; is wrong:
+
+# with notInherited field.from===this.location;
+$ ./bin/dojo-api-public ../dojo-website/src/documentation/api/1.10/details.json | wc -l
+   5927
+
+# without notInherited 
+$ ./bin/dojo-api-public ../dojo-website/src/documentation/api/1.10/details.json | wc -l
+  30811
+
+# functional without notInherited
+$./bin/dojo-api-public ../dojo-website/src/documentation/api/1.10/details.json | grep functional | wc -l
+    224
+
+
+
+*/

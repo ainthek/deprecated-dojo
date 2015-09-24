@@ -14,15 +14,26 @@ dojo/_base/lang methods
 - not marked in api docs (detail.json)
 - marked in reference guide
 
+Another problem is that some methods you will never find in documentation:
+
+Example, dojo functional and unzip
+
+	< ../dojo-website/src/documentation/api/1.10/details.json grep unzip
+
 ## Install and try
 	
 	# get tools
 	npm install
 
-	# nou using submodule, gh-pages problem
+	# not using submodule, gh-pages problem
 	# get/update dojo data (api and reference guide)
 	# git submodule init
 	# git submodule update
+
+	# do
+	git clone -b master --single-branch https://github.com/dojo/dojo-website.git
+
+	# or if clone somewhere on disk adjust paths
 
 	# methods deprecated in API docs (detail.json)
 	./bin/deprecated-api dojo-website/src/documentation/api/1.10/details.json
