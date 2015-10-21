@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# prints module name and status
+C="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$C/dojox-release-notes | grep -v "Maintained\|Mature\|Experimental" 

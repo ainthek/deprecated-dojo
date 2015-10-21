@@ -1,0 +1,8 @@
+#!/bin/bash
+
+C="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$C/deprecated-api dojo-website/src/documentation/api/1.10/details.json | cut -f1 | cnt | clmn-swap > api
+$C/deprecated-dojox-release-notes > rel-notes
+
+join-paste rel-notes api | sed "s;n/a;-;g" 
+rm api rel-notes

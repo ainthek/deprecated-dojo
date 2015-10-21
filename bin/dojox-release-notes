@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# prints module name and status
+
+git grep -h --no-index "^:ref:" dojo-website/src/documentation/reference-guide/1.10/dojox/index.rst |\
+# ugly
+tr -s " " " " | awk -F '[:` ]' '{print $4"\t"$7}'
