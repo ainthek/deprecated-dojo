@@ -10,7 +10,7 @@ TODO: join modules with deprecated APIs
 |-----|------|
 $(
 	# our repo, out tools, you do not have this
-	< grasp-amd-aliases.md cut -d"|" -f2 |\
+	< "$INIT_REPO_DOC/04-tech/12-development/amd-aliases/amd-aliases.md" cut -d"|" -f2 |\
 		trim | grep "^\(dojo\|dijit\|dojox\|util\)" | sed 's;[\\]_;_;g' | sort -u | sufix "\tYES" > used.txt
 
 	< dojo-website/src/documentation/api/1.10/details.json jsontool -M |\
