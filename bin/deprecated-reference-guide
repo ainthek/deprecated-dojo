@@ -3,4 +3,4 @@
 # TODO: lame, better, this was quick POC
 git grep -l --no-index deprecated -- "dojo-website/src/documentation/reference-guide/*.rst" |\
 grep -e '/\(dojo\|dojox\|dijit\|util\)/' |\
-sed "s;dojo-website/src/documentation/reference-guide/[^/]*/\(.*\)\.rst;\1;" | sort -u
+sed "s;dojo-website/src/documentation/reference-guide/[^/]*/\(.*\)\.rst;\1;" | sort 

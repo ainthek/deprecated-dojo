@@ -3,6 +3,6 @@
 C="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 $C/deprecated-api dojo-website/src/documentation/api/1.10/details.json | cut -f1 | cnt | clmn-swap > api
 $C/deprecated-dojox-release-notes > rel-notes
-
-join-paste rel-notes api | sed "s;n/a;-;g" 
-rm api rel-notes
+$C/deprecated-reference-guide | cnt | clmn-swap > ref-guide
+join-paste rel-notes ref-guide api | sed "s;n/a;-;g" 
+rm api rel-notes ref-guide
