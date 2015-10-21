@@ -5,8 +5,11 @@ Let's build a complete list of dojo deprecated api, to support [anti-babel](http
 ## TL;DR Results
 	
 This all seems to be somehow deprecated:
-	
+
 	./bin/deprecated 
+
+Note list has some false positives (example dojo/has reference guide column), 
+I will filter them later by manual inspection (probably)	
 
 |index|rel-notes|ref-guide|api|
 |-----|---------|---------|---|
