@@ -480,5 +480,10 @@ Samples:
 	./bin/deprecated-api dojo-website/src/documentation/api/1.8/details.json | wc -l
 	     972	
 
+## For review
+
+Intersection of our used modules with deprecated APIs:
+
+	git grep -h -w -f ./doc/used-modules.txt deprecated.md
 
 
