@@ -4,8 +4,8 @@ var JSONStream = require('JSONStream');
 var es = require('event-stream');
 var fs = require('fs');
 
-
-fs.createReadStream(process.argv[2])
+var detailsJson=process.argv[2] || require("path").resolve(__dirname,"../dojo-website/src/documentation/api/1.10/details.json");
+fs.createReadStream(detailsJson)
     .pipe(JSONStream.parse("*"))
     .pipe(es.mapSync(function(module) {
 
