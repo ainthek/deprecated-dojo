@@ -13,9 +13,9 @@ Some statistics we can find from dojo api docs (detail.json)
 
 ## Modules count
 
-| part | count |
-|------|-------| 
-$( < modules.public.txt cut -d"/" -f1 | cnt | trim | md-table " ")
+| module | count |
+|--------|-------| 
+$( < modules.public.txt cut -d"/" -f1 | cnt | clmn-swap | trim | md-table " ")
 
 ## Types of modules
 $(
