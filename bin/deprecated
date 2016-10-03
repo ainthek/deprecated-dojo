@@ -4,5 +4,6 @@ C="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 $C/deprecated-api dojo-website/src/documentation/api/1.10/details.json | cut -f1 | cnt | clmn-swap > api
 $C/deprecated-dojox-release-notes > rel-notes
 $C/deprecated-reference-guide | cnt | clmn-swap > ref-guide
-join-paste rel-notes ref-guide api | sed "s;n/a;-;g" 
+join-paste rel-notes ref-guide api | sed "s;n/a;-;g" | tee "$C/../deprecated.txt"
+< deprecated.txt md-escape-emphasis | sed "2d" | md-table-header | md-table | tee "$C/../deprecated.md" 
 rm api rel-notes ref-guide
