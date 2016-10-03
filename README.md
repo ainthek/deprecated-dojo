@@ -4,14 +4,15 @@ Let's build a complete list of dojo deprecated api, to support [anti-babel](http
 
 ## TL;DR Results
 	
-This all seems to be somehow deprecated:
+This all seems to be somehow deprecated, by release notes, reference guide or by api docs:
 
 	./bin/deprecated 
 
 Note list has some false positives (example dojo/has reference guide column), 
-I will filter them later by manual inspection (probably)	
+I will filter them later by manual inspection (probably).
 
-|index|rel-notes|ref-guide|api|
+
+|mid|rel-notes|ref-guide|api-doc|
 |-----|---------|---------|---|
 |dijit/Calendar|-|-|4|
 |dijit/Calendar.\_MonthDropDown|-|-|3|
