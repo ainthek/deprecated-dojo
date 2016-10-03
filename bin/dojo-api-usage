@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mid=$1
+aliases=$($INIT_REPO_DOC/04-tech/12-development/amd-aliases/amd-aliases.md)
