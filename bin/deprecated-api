@@ -19,6 +19,6 @@ fs.createReadStream(detailsJson)
 
         function print(field) {
             // this is module
-            console.log("%s\t%s\t%s", this.location, field.name, field.deprecated);
+            console.log("%s\t%s\t%s\t%s", this.location, field.name, field.deprecated, field.from);
         }
     }));
